@@ -1,0 +1,140 @@
+body {
+  padding: 20px; /* Add appropriate units, e.g., pixels */
+  margin: 20px;
+  background-color: #000;
+  font-family: "Gluten", "Open Sans", sans-serif;
+  font-style: normal;
+  color:white;
+  font-weight: 300;
+  display: flex;
+  align-items: top;
+  text-align: left;
+  justify-content: center;
+}
+
+
+.sketch-container {
+  text-align: center;
+}
+
+canvas {
+  border: 1px solid #000; /* Optional: Add a border to the canvas */
+}
+
+/* .sticky-header {
+  background-color: #000;
+  color: #fff;
+  padding: 20px;
+  width: 30%; /* Adjust as needed */
+  /* position: sticky;
+  top: 0;
+} */ */
+
+main {
+  flex:1;
+  padding:20px;
+  height:100vh;
+  background-color: #000;
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Ensure elements are stacked vertically */
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  margin: 40px 10px; /* Remove default margin for <h1> */
+  color: white;
+  font-size:100px;
+}
+
+.container p {
+  margin: 0 80px; /* Remove default margin for <p> */
+  color: white;
+  font-size: 24px; /* Adjust font size as needed */
+  line-height: 1.6; /* Adjust line height as needed */
+  text-align: left; /* Use text-align instead of float */
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+h2 {
+  text-align: center;
+  font-style: normal;
+  font-size: 3em;
+}
+
+h3 {
+  text-align: center;
+  font-style: normal;
+  font-size: 2em;    
+}
+
+.p5-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
+.imagecontainer {
+  margin: 50px;
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  text-align: center;
+}
+
+.imagecontainer img {
+  width: 100%; /* Make sure the images take the full width of their container */
+  display: block; /* Remove any extra spacing below the images */
+  margin: 0 auto; /* Center the images horizontally */
+}
+
+.container img {
+  margin:0 10px;
+}
+.container pc {
+  font-size:18px;
+  line-height:1.8;
+  margin:0px;
+  text-align:left;
+  float:left;
+}
+
+.columncontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0 100px
+}
+
+.newcolumncontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0 200px
+}
+
+.column {
+  width: 48%; 
+  margin: 0
+}
+
+.narrow-column {
+  width: 38%; 
+  margin-bottom: 20px; 
+  box-sizing: border-box; 
+}
+
+.wide-column {
+  width: 56%; 
+  margin-bottom: 20px; 
+  box-sizing: border-box; 
+}
