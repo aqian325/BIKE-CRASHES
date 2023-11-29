@@ -2,7 +2,7 @@ html, body {
   padding: 20px; /* Add appropriate units, e.g., pixels */
   margin: 20px;
   background-color: #101010;
-  font-family: "Gluten", "Open Sans", sans-serif;
+  font-family: "Gill Sans", sans-serif;
   font-style: normal;
   color:white;
   font-weight: 300;
@@ -40,6 +40,7 @@ main {
   flex-direction: column; /* Ensure elements are stacked vertically */
   align-items: center;
   text-align: center;
+  margin:80px 40px
 }
 
 h1 {
@@ -49,9 +50,9 @@ h1 {
 }
 
 .container p {
-  margin: 0 80px; /* Remove default margin for <p> */
+  margin: 80px 40px; /* Remove default margin for <p> */
   color: white;
-  font-size: 24px; /* Adjust font size as needed */
+  font-size: 36px; /* Adjust font size as needed */
   line-height: 1.6; /* Adjust line height as needed */
   text-align: left; /* Use text-align instead of float */
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif

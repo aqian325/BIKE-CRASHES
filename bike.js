@@ -46,7 +46,7 @@ function draw() {
   textSize(40);
   textAlign(LEFT, CENTER);
   fill(255);
-  text("Each circle represents one death per 100,000 residents", 85, 100);
+  text("Each circle represents one death per 100,000 residents. Each one represents one of too many scary moments. ", 85, 100);
 
   for (let i = 0; i < table.getRowCount() - 1; i += 2) {
     let currentRow = table.getRow(i);
