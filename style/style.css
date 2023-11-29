@@ -1,25 +1,23 @@
-body {
+html, body {
   padding: 20px; /* Add appropriate units, e.g., pixels */
   margin: 20px;
-  background-color: #000;
+  background-color: #101010;
   font-family: "Gluten", "Open Sans", sans-serif;
   font-style: normal;
   color:white;
   font-weight: 300;
   display: flex;
-  align-items: top;
+  align-items: center;
   text-align: left;
   justify-content: center;
 }
+
 
 
 .sketch-container {
   text-align: center;
 }
 
-canvas {
-  border: 1px solid #000; /* Optional: Add a border to the canvas */
-}
 
 /* .sticky-header {
   background-color: #000;
