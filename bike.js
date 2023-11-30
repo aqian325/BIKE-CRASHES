@@ -1,90 +1,106 @@
 let table;
 let linechart;
 let cabinFont;
-let foo;
-let y=0;
+let bikeline;
+
+let isClicked = false;
+
+let cambridgeYPositions = []; // Array to store Y positions for Cambridge
 
 function preload() {
   table = loadTable("data/cambridge_incidents_by_year.csv", "header");
   cabinFont = loadFont("fonts/Cabin.ttf");
-  linechart = loadImage("image/bikeline.png");
+  bikeline = loadImage("image/bikeline.png");
 }
-
 
 function setup() {
   createCanvas(windowWidth - 400, windowHeight * 8);
   background('#101010');
+
+  // Initialize the starting Y positions for Cambridge
+  for (let i = 0; i < table.getRowCount() - 1; i += 2) {
+    cambridgeYPositions.push(420); // Assuming 420 is your startY
+  }
 }
 
 function draw() {
-  // background('101010');
-  // image(bikeline, mouseX, mouseY);
+  background('#101010');
 
-  let circleRadius = 10;
-  let startY = 420; // Adjusted starting position
+  // Setting position of line chart
+  image(bikeline, width - (bikeline.width / 2 + 300), height - (bikeline.height / 2 + 200), bikeline.width / 1.7, bikeline.height / 1.7);
+
+  // Load font
+  textFont(cabinFont);
+  let circleRadius = 20;
   let citySpacing = 40;
-  noStroke(); // Remove the black border for circles
-  // FontFace = cabinFont; 
+  noStroke();
 
   // Legend for Cambridge
   fill(255);
-  ellipse(100, 180, circleRadius * 2, circleRadius * 2);
+  ellipse(100, 220, circleRadius * 2, circleRadius * 2);
   textSize(28);
   textAlign(LEFT, CENTER);
   fill(255);
-  text("Cambridge", 120, 180);
+  text("Cambridge", 140, 220);
 
   // Legend for Boston
-  fill(255, 255, 255, 0.8);
-  ellipse(100, 250, circleRadius * 2, circleRadius * 2);
+  fill(255, 80);
+  ellipse(100, 270, circleRadius * 2, circleRadius * 2);
   textSize(28);
   textAlign(LEFT, CENTER);
   fill(255);
-  text("Boston", 120, 250);
+  text("Boston", 140, 270);
 
   // Text below the legend
   textSize(40);
   textAlign(LEFT, CENTER);
   fill(255);
-  text("Each circle represents one death per 100,000 residents. Each one represents one of too many scary moments. ", 85, 100);
+  text("Each circle represents one bike crash per 100,000 residents.", 85, 100);
+  text("Each one documents one of too many scary moments.", 85, 150);
 
+  // Drawing circles for Cambridge and Boston
   for (let i = 0; i < table.getRowCount() - 1; i += 2) {
     let currentRow = table.getRow(i);
     let nextRow = table.getRow(i + 1);
 
     let year = currentRow.getString("year");
-
-    // Draw labels for year at the top (rotated)
     let xCambridge = map(year, 2015, 2023, 100, width - 100);
     let xBoston = xCambridge + citySpacing;
 
+    // Draw labels for year at the top (rotated)
     push();
     translate(xCambridge, 180); // Adjusted position
     textAlign(CENTER, CENTER);
     textSize(28); // Adjust the text size as needed
     fill(255);
-    text(year, 20, 150);
+    noStroke();
+    text(year, 20, 180);
     pop();
 
-    // Draw circles for each incident count with consistent vertical spacing for Cambridge
+    // Draw circles for each incident count for Cambridge
     let incidentCountCurrent = currentRow.getNum("Per cap rounded");
     for (let k = 0; k < incidentCountCurrent; k++) {
-      let y = startY + k * 20;
       fill(255);
-      ellipse(xCambridge, y, circleRadius * 2, circleRadius * 2);
+      ellipse(xCambridge, cambridgeYPositions[i / 2] + k * 40, circleRadius * 2, circleRadius * 2);
     }
 
-    // Draw circles for each incident count with consistent vertical spacing for Boston
+    // Draw circles for each incident count for Boston
     let incidentCountNext = nextRow.getNum("Per cap rounded");
-
     for (let k = 0; k < incidentCountNext; k++) {
-      let y = startY + k * 20;
-      fill(255, 255, 255, 0.8);
-      ellipse(xBoston, y, circleRadius * 2, circleRadius * 2);
+      fill(255, 255, 255, 80);
+      ellipse(xBoston, 420 + k * 40, circleRadius * 2, circleRadius * 2);
     }
   }
-  
-  // console.log("Image loaded:", backgroundImage);
-  // image(backgroundImage, 0, startY + imageSpacing, width, height - startY - imageSpacing);
 
+  // Update positions on click
+  if (isClicked) {
+    for (let i = 0; i < cambridgeYPositions.length; i++) {
+      cambridgeYPositions[i] += 20; // Move each ball down by framecount
+    }
+    isClicked = true; // Reset the click state
+  }
+}
+
+function mousePressed() {
+  isClicked = true;
 }
