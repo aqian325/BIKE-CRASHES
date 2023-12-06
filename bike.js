@@ -27,7 +27,7 @@ function draw() {
   background('#101010');
 
   // Setting position of line chart
-  image(bikeline, width - (bikeline.width / 2 + 300), height - (bikeline.height / 2 + 200), bikeline.width / 1.7, bikeline.height / 1.7);
+  image(bikeline, width - (bikeline.width / 2 + 300), height - (bikeline.height / 2 + 200), bikeline.width / 2, bikeline.height / 2);
 
   // Load font
   textFont(cabinFont);
