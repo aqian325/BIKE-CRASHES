@@ -1,0 +1,39 @@
+html, body {
+  padding: 20px;
+  margin: 20px;
+  background-color: #101010;
+  font-family: "Gill Sans", sans-serif;
+  font-style: normal;
+  color: white;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  justify-content: center;
+  overflow-x: hidden; /* Disable horizontal scrolling at the body level */
+}
+
+.container {
+  display: flex;
+  flex-direction: row; /* Change from column to row for horizontal alignment */
+  align-items: center;
+  text-align: center;
+  margin: 80px 40px;
+  white-space: nowrap; /* Prevent line breaks within the container */
+  overflow-x: auto; /* Enable horizontal scrolling within the container */
+  width: 100vw; /* Make the container take the full viewport width */
+}
+
+/* Adjust other styles as needed for horizontal layout */
+.container img {
+  margin: 0 10px;
+}
+
+.container p {
+  margin: 80px 40px;
+  color: white;
+  font-size: 36px;
+  line-height: 1.6;
+  text-align: left;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
