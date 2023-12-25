@@ -2,16 +2,18 @@
 let numCols = 6;
 let numRows = 5;
 let crashData; 
+let randomQuote;
 
 // Spacing between balls
 let spacing = 20;
 
 // Array to hold the Ball objects
 let balls = [];
+let bikequotes = []; // array of quotes
 
 // Parameters for ball physics
 let spring = 0.01; // Reduced spring value for less bounce
-let gravity = 0.01; // Reduced gravity for slower movement
+let gravity = 0.03; // Reduced gravity for slower movement
 let friction = -0.1; // Reduced friction for slower deceleration
 let randomness = 0.1; // Adjust the randomness factor
 
@@ -20,16 +22,19 @@ let movementStarted = false; // Flag to indicate if movement has started
 
 function preload ()  {
   table = loadTable("data/cambridge_incidents_by_year.csv", "header");
+  quotes = loadTable("data/bikequotes.csv", "header")
   console.log(table);
+  console.log(quotes);
 
   //convertying csv into array of objects
   crashData = table.getRows();
+  quoteData = quotes.getRows();
 }
 
 
 function setup() {
   // createCanvas(3000, 1000);
-  let canvas = createCanvas(2000, 1000); // Adjust the size as needed
+  let canvas = createCanvas(2000, windowHeight - 100); // Adjust the size as needed
   canvas.parent('animation-container');
 
   // Calculate the diameter of each ball based on canvas size, spacing, and number of rows
@@ -73,6 +78,7 @@ function draw() {
       ball.move();    // Update the position based on velocity
     }
     ball.display(); // Draw the ball
+    // ball.mouseOver(randomQuote); //display random quote from bikequotes file
   });
 }
 
@@ -163,6 +169,11 @@ class Ball {
     ellipse(this.x, this.y, this.diameter, this.diameter);
   }
 }
+
+// function randomQuote() {
+//   let displayquote = quoteData[int(random(2,86))].getString('story_text');
+// } 
+
 
 document.addEventListener('scroll', function () {
   console.log('Scroll event triggered.');
