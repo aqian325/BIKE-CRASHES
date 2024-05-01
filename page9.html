@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/main2.css"> <!-- Use the horizontal-scroll.css stylesheet -->
+  <title>anatomy of a bike crash</title>
+
+  
+</head>
+
+
+<body>
+  <div class="container" id="pageClickArea">
+
+  <div class = 'container'>
+    <div class="fixed-text">
+      <p>click to continue</p>
+      <div id="scroll-progress"></div>
+    </div>
+
+    <div class = 'slide'>
+      <p>In the 83 stories collected in the <span class="orange-word">Scary Moments Project</span>...<br>
+        "bike lanes" were mentioned 69 times. <br><br>
+        How do we measure the impact of bike lanes in light of these stories? 
+      </p>
+    </div>
+
+    
+    <div class = 'slide'>
+      <p>In the 83 stories collected in the <span class="orange-word">Scary Moments Project</span>...<br>
+        "car door" was mentioned 17 times. <br><br>
+        This means that over 18% people who wrote in to the Scary Moments <br>
+        project mentioned the phrase “car door.” <br><br>
+        “Dooring” refers to the act of opening a motor vehicle door <br>
+        into the path of another road user – oftentimes, that other road user is a cyclist. 
+      </p>
+    </div>
+</div>
+
+<div class = 'slide'>
+  <h3 >How can we prevent bike crashes? </h3>
+  <p>Research has shown that bicycle helmets, fluorescent clothing, <br>
+    and active lighting on bikes can reduce injuries and fatalities to bicyclists.<br><br>
+    Aside from these individual measures, the magnitude of bicycle-motorist collisions calls for infrastructural changes. 
+  </p>
+
+</div>
+<div class = 'slide'>
+  <h3 >How can we prevent bike crashes? </h3>
+  <p>In 2019, Cambridge passed the <span class="blue-word">CYCLING SAFETY ORDINANCE</span>, <br>
+    which laid out a plan to install a 25-mile network of protected bicycle lanes <br>
+    across the city by 2026.<br><br>
+    As of December 2023, according to the City of Cambridge’s Cycling Safety Ordinance webpage, <br>
+    <span class="blue-word">12.64 miles</span> of bike lanes have been installed. <br><br>
+    That is <span class="blue-word">56%</span> of the 22.6 miles of bike lanes that the Ordinance plans to install by 2026. 
+  </p>
+</div>
+  <script>
+    document.getElementById('pageClickArea').addEventListener('click', function(event) {
+      const boundary = this.offsetWidth / 2; // Divides the page width into two
+      if (event.clientX > boundary) { // Checks if the click is on the right side
+        window.location.href = 'firstlanding.html'; // Change to your next page URL
+      }
+    });
+  </script> 
+</body>
+
+
+<!-- <body style="background-color: #101010 !important;">
+  <div class="horiz-outer">  Use the horizontal scroll container class -->
+    <!-- <main class="container"> Adjusted main class to container for horizontal layout -->
+      <!-- Your content remains unchanged -->
+      <!-- <br><br><br><br>
+      <div class="imagecontainer">
+        <img src='image/bike landing page.png' width="100%" alt="title">
+      </div> -->
+
+      <!-- <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+    </main>
+  </div>
+</body> --> 
+
+</html>

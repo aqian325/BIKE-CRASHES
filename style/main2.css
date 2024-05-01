@@ -16,9 +16,9 @@ body {
 .fixed-text {
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 50%;
   width: 100%;
-  text-align: center;
+  text-align: left;
   padding: 10px;
   font-size: 12px;
   color:white;
@@ -46,8 +46,8 @@ h2{
 }
 
 p{
-  display: inline-block;
-  width:100wv;
+  /* display: inline-block; */
+  /* width:100wv; */
 }
 
 .container {
@@ -58,8 +58,9 @@ p{
   /* margin: 80px 40px; */
   white-space: nowrap; /* Prevent line breaks within the container*/
   overflow-x: auto; /* Enable horizontal scrolling within the container */
-  /* width: 100vw; /* Make the container take the full viewport width */
+  width: 100vw; /* Make the container take the full viewport width */
 }
+
 
 /* .container h1 {
   margin: 80px auto 80px auto; 
@@ -84,6 +85,8 @@ p{
   max-width: 70ch; /* Set the maximum width to 70 characters */
   font-family: 'Gill Sans', sans-serif;
 }
+
+
 
 .titleslide {
    /* Set height of each slide to the full viewport height */
@@ -194,5 +197,96 @@ p{
   color: rgb(255, 255, 255); /* Set the desired color for the word */
   font-size: 28px;
   font-weight: bold;
+}
+
+.center-canvas {
+  display: flex;
+  justify-content: center;  /* Centers horizontally in the flex container */
+  flex: 0 0 auto;           /* Prevents the div from growing or shrinking*/
+  width: 100%;              /* Takes the full width of the container*/
+  height: 100%;             /* Optional, based on your design needs*/
+  align-items: center;      /* Centers the content vertically within the container*/
+  position: relative;       /* Establishes a positioning context*/
+}
+
+
+/* SVG styling with scaling and animation */
+
+/* SVG floating on the left half */
+.svg-floating-left {
+  position: absolute;
+  top: 50%;
+  left: 15%; /* Centered on the left half */
+  transform: translate(-50%, -50%) scale(0.1);
+  animation: floatLeftHalf 10s infinite linear;
+  height: auto;
+  display: block;
+}
+
+@keyframes floatLeftHalf {
+  0%, 100% { transform: translate(-50x, -10x) scale(0.1); }
+  25% { transform: translate(-100px, -50px) scale(0.1); }
+  50% { transform: translate(0px, 50px) scale(0.1); }
+  75% { transform: translate(-10px, -35px) scale(0.1); }
+}
+
+/* SVG floating on the right half */
+.svg-floating-right {
+  position: absolute;
+  top: 50%;
+  left: 75%; /* Centered on the right half */
+  transform: translate(-50%, -50%) scale(1);
+  animation: floatRightHalf 10s infinite linear;
+  height: auto;
+  display: block;
+}
+
+@keyframes floatRightHalf {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  25% { transform: translate(50px, -100px) scale(1); }
+  50% { transform: translate(100px, 100px) scale(1); }
+  75% { transform: translate(0px, -50px) scale(1); }
+}
+
+/* SVG statically positioned on the bottom third and 1/4 from the right edge, with rotation */
+.svg-static-rotate {
+  position: absolute;
+  top: 50%; /* Positioned in the bottom third of the viewport */
+  left: 75%; /* Positioned 1/4 screen widths from the right edge */
+  transform: translateX(-50%) rotate(0deg) scale(0.5); /* Center and start rotation from 0 degrees */
+  animation: rotate360 10s infinite linear; /* Continuous 360-degree rotation */
+  height: auto; /* Maintain the aspect ratio */
+  display: block;
+}
+
+@keyframes rotate360 {
+  from {
+    transform: translateX(-50%) rotate(0deg) scale(0.5);
+  }
+  to {
+    transform: translateX(-50%) rotate(360deg) scale(0.5);
+  }
+}
+
+/* SVG statically positioned on the bottom third and 1/4 from the right edge, with rotation */
+.svg-static-2 {
+  position: absolute;
+  top: 50%; /* Positioned in the bottom third of the viewport */
+  left: 75%; /* Positioned 1/4 screen widths from the right edge */
+  transform: translateX(-50%) rotate(0deg) scale(0.2); /* Center and start rotation from 0 degrees */
+  animation: rotate180 10s infinite linear; /* Continuous 360-degree rotation */
+  height: auto; /* Maintain the aspect ratio */
+  display: block;
+}
+
+@keyframes rotate180 {
+  from {
+    transform: translateX(-50%) rotate(90deg) scale(0.2);
+  }
+  to {
+    transform: translateX(-50%) rotate(270deg) scale(0.2);
+  }
+  50% { transform: translate(100px, 100px) scale(1); }
+
 }
 

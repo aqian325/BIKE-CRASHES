@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/main2.css"> <!-- Use the horizontal-scroll.css stylesheet -->
+  <title>anatomy of a bike crash</title>
+
+  
+</head>
+
+
+<body>
+  <div class="container" id="pageClickArea">
+
+  <div class = 'container'>
+    <div class="fixed-text">
+      <p>click to continue</p>
+      <div id="scroll-progress"></div>
+    </div>
+
+    <div class = 'slide'>
+      <h3>
+        Where and how do bike crashes occur? 
+      </h3>
+      <p>According to the National Highway Traffic Safety Administration, most bike crashes occur: <br>
+        [1] in urban areas <br>
+        [2] on sections of roads away from intersections, where higher speeds might occur<br>
+        [3] between 6 p.m. and 9 p.m. <br>
+        While adults ages 55 to 69 have the highest rates of bicycle deaths, <br>
+        adolescents, teens, and young adults have the highest rates of bicycle-related injuries. <br><br>
+        The most common types of bike crashes involve: <br>
+        [1] cyclists riding through intersections and into a motor vehicle's path <br>
+        [2] motor vehicles failing to yield at intersections<br>
+        [3] motorists turning or merging into a parallel moving cyclist's path
+
+
+      </p>
+    </div>
+
+
+  <script>
+    document.getElementById('pageClickArea').addEventListener('click', function(event) {
+      const boundary = this.offsetWidth / 2; // Divides the page width into two
+      if (event.clientX > boundary) { // Checks if the click is on the right side
+        window.location.href = 'page8.html'; // Change to your next page URL
+      }
+    });
+  </script> 
+</body>
+
+
+<!-- <body style="background-color: #101010 !important;">
+  <div class="horiz-outer">  Use the horizontal scroll container class -->
+    <!-- <main class="container"> Adjusted main class to container for horizontal layout -->
+      <!-- Your content remains unchanged -->
+      <!-- <br><br><br><br>
+      <div class="imagecontainer">
+        <img src='image/bike landing page.png' width="100%" alt="title">
+      </div> -->
+
+      <!-- <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+    </main>
+  </div>
+</body> --> 
+
+</html>

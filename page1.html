@@ -14,21 +14,39 @@
 <body>
   <div class = 'container'>
     <div class="fixed-text">
-      <p>scroll to continue</p>
+      <p>click to continue</p>
       <div id="scroll-progress"></div>
     </div>
 
-    <div class = 'titleslide'>
-      <h1 >ANATOMY <i style = "font-size :60px">of</i> <br>
-        <i style = "font-size :60px; margin-left: 100px;">a</i> BIKE CRASH
-      </h1>
-      <p style = "margin-left:25%; margin-right: 0%;">
-      crash<sup>1</sup><br>
-      <i>noun</i><br>
-          a violent collision, <br>typically of one vehicle with another <br>or with an obstacle.<br><br>
-      <span style = 'font-size:8pt'>[1] Oxford Languages</span>
+    <div class = 'slide'>
+      <h2 >Cycling in Cambridge and Boston used to be a lot more dangerous... <br><br>
+           and it remains risky here and in many other cities. 
+      </h2>
+    </div>
+
+    <div class = 'slide'>
+      <p>In Cambridge alone, first responders are called to 160 crashes every year <br>
+        involving a person on a bike being struck by a car, <br>
+        according to data from the Cambridge Police Department. <br>
+      What we have is likely an incomplete picture. <br><br>Many more crashes go <span class="colored-word">unreported</span>.        
       </p>
     </div>
+
+    <div class = 'slide'>
+      <h3>
+        Why is this important? 
+      </h3>
+      <p>Data from the CDC indicates that nearly 1,000 cyclists die and over 130,000 are injured <br>
+        in crashes that occur on roads in the US every single year. <br><br>
+        The cost of these tragedies is innumerable. <br>
+        In monetary terms alone, bike injuries and deaths from crashes <br>
+        result in losses of over $23 billion in the US each year. <br><br>
+        What's more, these experiences exact an immense physical and emotional toll <br>
+        on the person riding a bike, their friends, and their loved ones, <br>
+        who sometimes have to deal with years of trauma or injury.      
+      </p>
+    </div>
+
     <div class = 'slide'>
       <h3>
         Where and how do bike crashes occur? 
@@ -47,35 +65,10 @@
 
       </p>
     </div>
-    <div class = 'slide'>
-      <h3>
-        Why is this important? 
-      </h3>
-      <p>Data from the CDC indicates that nearly 1,000 cyclists die and over 130,000 are injured <br>
-        in crashes that occur on roads in the US every single year. <br><br>
-        The cost of these tragedies is innumerable. <br>
-        In monetary terms alone, bike injuries and deaths from crashes <br>
-        result in losses of over $23 billion in the US each year. <br><br>
-        What's more, these experiences exact an immense physical and emotional toll <br>
-        on the person riding a bike, their friends, and their loved ones, <br>
-        who sometimes have to deal with years of trauma or injury.      
-      </p>
-    </div>
-    <div class = 'slide'>
-      <p>let's zoom into Cambridge, Mass. </p>
-    </div>
-    <div class = 'slide'>
-      <h2 >Cycling in this city used to be a lot more dangerous... <br><br>
-           and it remains risky here and in many other cities. 
-      </h2>
-    </div>
-    <div class = 'slide'>
-      <p>In Cambridge, first responders are called to 160 crashes every year <br>
-        involving a person on a bike being struck by a car, <br>
-        according to data from the Cambridge Police Department. <br>
-      What we have is likely an incomplete picture. <br><br>Many more crashes go <span class="colored-word">unreported</span>.        
-      </p>
-    </div>
+
+
+
+
     <div class = 'slide'>
       <h3 >How can we prevent bike crashes? </h3>
       <p>Research has shown that bicycle helmets, fluorescent clothing, <br>
@@ -144,7 +137,14 @@
   <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
     </div>
   </div>
-  
+  <script>
+    document.getElementById('pageClickArea').addEventListener('click', function(event) {
+      const boundary = this.offsetWidth / 2; // Divides the page width into two
+      if (event.clientX > boundary) { // Checks if the click is on the right side
+        window.location.href = 'page2.html'; // Change to your next page URL
+      }
+    });
+  </script>
 </body>
 
 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/main2.css"> <!-- Use the horizontal-scroll.css stylesheet -->
+  <title>anatomy of a bike crash</title>
+
+  
+</head>
+
+
+<body>
+  <div class="container" id="pageClickArea">
+
+  <div class = 'container'>
+    <div class="fixed-text">
+      <p>click to continue</p>
+      <div id="scroll-progress"></div>
+    </div>
+
+
+    <div class = 'slide' style="padding-right: 10px;">
+
+      <p><span class="large-word">City-level data</span> shows that Cambridge reports higher per-capita<br>
+        cyclist deaths than nearby Boston. <br><br>
+
+        Each circle represents one cyclist death per 10k residents. <br>
+        Each circle is one of too many scary moments. <br><br>
+      </p>
+
+      <div class="imagecontainer" style="padding-left:70px;">
+        <img src='image/city_legend.png' width="20%" alt="city legend">
+      </div> 
+      <!-- <p><span class="large-word">Scroll ahead</span> to see and hear about the untold experiences <br>
+        of people who ride in Cambridge and why it is so important <br>
+        that the City rapidly move toward a city-wide network of protected bike lanes.   
+      </p> -->
+    </div>
+    <div id="animation-container" class="center-canvas" style="padding: 50px;"></div>
+  </div>
+
+
+      <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
+  <!-- <script language="javascript" type="text/javascript" src="bike.js"></script> -->
+  <script language="javascript" type="text/javascript" src="Ball.js"></script>
+  <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
+    </div>
+  </div>
+</div>
+
+  <script>
+    document.getElementById('pageClickArea').addEventListener('click', function(event) {
+      const boundary = this.offsetWidth / 2; // Divides the page width into two
+      if (event.clientX > boundary) { // Checks if the click is on the right side
+        window.location.href = 'page5.html'; // Change to your next page URL
+      }
+    });
+  </script> 
+</body>
+
+
+<!-- <body style="background-color: #101010 !important;">
+  <div class="horiz-outer">  Use the horizontal scroll container class -->
+    <!-- <main class="container"> Adjusted main class to container for horizontal layout -->
+      <!-- Your content remains unchanged -->
+      <!-- <br><br><br><br>
+      <div class="imagecontainer">
+        <img src='image/bike landing page.png' width="100%" alt="title">
+      </div> -->
+
+      <!-- <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+    </main>
+  </div>
+</body> --> 
+
+</html>

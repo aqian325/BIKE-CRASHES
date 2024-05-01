@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/main2.css"> <!-- Use the horizontal-scroll.css stylesheet -->
+  <title>anatomy of a bike crash</title>
+
+  
+</head>
+
+
+<body>
+  <div class="container" id="pageClickArea">
+
+  <div class = 'container'>
+    <div class="fixed-text">
+      <p>click to continue</p>
+      <div id="scroll-progress"></div>
+    </div>
+
+
+    <div class = 'slide'>
+      <p>In the 83 stories collected in the <span class="orange-word">Scary Moments Project</span>...<br>
+        Over half of people who wrote in to the Scary Moments project mentioned Massachusetts Ave. <br>
+        This is one of the busiest streets in Cambridge, and one of the most dangerous for cyclists. <br><br>
+        Other frequently mentioned locations include:<br>
+        Cambridge Street (17%) <br>
+        Harvard Square (15%)
+      </p>
+    </div>
+
+  <script>
+    document.getElementById('pageClickArea').addEventListener('click', function(event) {
+      const boundary = this.offsetWidth / 2; // Divides the page width into two
+      if (event.clientX > boundary) { // Checks if the click is on the right side
+        window.location.href = 'page7.html'; // Change to your next page URL
+      }
+    });
+  </script> 
+</body>
+
+
+<!-- <body style="background-color: #101010 !important;">
+  <div class="horiz-outer">  Use the horizontal scroll container class -->
+    <!-- <main class="container"> Adjusted main class to container for horizontal layout -->
+      <!-- Your content remains unchanged -->
+      <!-- <br><br><br><br>
+      <div class="imagecontainer">
+        <img src='image/bike landing page.png' width="100%" alt="title">
+      </div> -->
+
+      <!-- <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
+    </main>
+  </div>
+</body> --> 
+
+</html>
